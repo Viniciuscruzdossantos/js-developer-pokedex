@@ -136,7 +136,7 @@ Se você usa o **VS Code**, também pode clicar em **Go Live** (extensão *Live 
 
 ## 🙌 Créditos
 
-Este projeto é uma versão melhorada do **js-developer-pokedex**, proposto pela **[DIO](https://www.dio.me/)**, com base no repositório origina.
+Este projeto é uma versão melhorada do **js-developer-pokedex**, proposto pela **[DIO](https://www.dio.me/)**, com base no repositório original.
 
 Muito obrigado pela ideia e pela base do projeto! 👏
 
