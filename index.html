@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+
+    <!-- Fontes (se não carregarem, o navegador usa uma fonte padrão) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+
+    <!-- Nosso CSS (caminhos relativos: funcionam com duplo clique no index.html) -->
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/pokedex.css">
+</head>
+
+<body>
+    <main class="pokedex" id="pokedex">
+
+        <!-- Topo: lente azul, luzes e nome -->
+        <header class="topo">
+            <div class="lente" aria-hidden="true"></div>
+            <div class="leds" aria-hidden="true">
+                <i class="led led--vermelho"></i>
+                <i class="led led--amarelo"></i>
+                <i class="led led--verde"></i>
+            </div>
+            <h1 class="topo__titulo">Pokédex</h1>
+        </header>
+
+        <section class="corpo">
+
+            <!-- Moldura + tela -->
+            <div class="moldura">
+                <div class="moldura__pontos" aria-hidden="true"><i></i><i></i></div>
+
+                <div class="tela">
+                    <p class="tela__msg" id="mensagem">Carregando...</p>
+
+                    <!-- Lista de pokémons (mesmo id do projeto original) -->
+                    <ol id="pokemonList" class="pokemons"></ol>
+
+                    <!-- Detalhes de um pokémon -->
+                    <article id="detalhe" class="detalhe" hidden></article>
+                </div>
+
+                <div class="moldura__base" aria-hidden="true">
+                    <i class="botao-led"></i>
+                    <span class="grade"><i></i><i></i><i></i><i></i></span>
+                </div>
+            </div>
+
+            <!-- Painel de controles -->
+            <div class="painel">
+                <div class="painel__esq">
+                    <div class="dpad" role="group" aria-label="Direcional">
+                        <button class="dpad__btn dpad__btn--cima" type="button" data-dir="cima" aria-label="Cima"></button>
+                        <button class="dpad__btn dpad__btn--esquerda" type="button" data-dir="esquerda" aria-label="Esquerda"></button>
+                        <span class="dpad__centro" aria-hidden="true"></span>
+                        <button class="dpad__btn dpad__btn--direita" type="button" data-dir="direita" aria-label="Direita"></button>
+                        <button class="dpad__btn dpad__btn--baixo" type="button" data-dir="baixo" aria-label="Baixo"></button>
+                    </div>
+                </div>
+
+                <div class="painel__meio">
+                    <div class="lcd" aria-live="polite">
+                        <p class="lcd__titulo" id="lcdTitulo">POKÉDEX</p>
+                        <p class="lcd__info" id="lcdInfo"></p>
+                    </div>
+
+                    <form class="busca" id="busca" autocomplete="off">
+                        <input id="buscaInput" type="text" placeholder="Nome ou nº (1-151)" aria-label="Buscar pokémon por nome ou número">
+                        <button type="submit" class="busca__btn">Ir</button>
+                    </form>
+                    <p class="busca__erro" id="buscaErro" role="alert"></p>
+                </div>
+
+                <div class="painel__dir">
+                    <div class="acoes">
+                        <button class="acao acao--b" type="button" data-acao="b" aria-label="Botão B: voltar">B</button>
+                        <button class="acao acao--a" type="button" data-acao="a" aria-label="Botão A: abrir ou ouvir o grito">A</button>
+                    </div>
+                    <button id="loadMoreButton" class="faixa" type="button">Carregar mais</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Nosso JS -->
+    <script src="./assets/js/pokemon-model.js"></script>
+    <script src="./assets/js/poke-api.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
