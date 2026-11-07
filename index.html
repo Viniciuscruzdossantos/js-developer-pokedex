@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo da memória com emojis feito em HTML, CSS e JavaScript puro.">
+  <title>Jogo Da Memória</title>
+  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>JOGO DA MEMÓRIA</h2>
+
+    <div class="status">
+      <div class="status__item">
+        <span class="status__label">Jogadas</span>
+        <strong class="status__value" id="moves">0</strong>
+      </div>
+      <div class="status__item">
+        <span class="status__label">Tempo</span>
+        <strong class="status__value" id="timer">00:00</strong>
+      </div>
+      <div class="status__item">
+        <span class="status__label">Recorde</span>
+        <strong class="status__value" id="best">--</strong>
+      </div>
+    </div>
+
+    <div class="game"></div>
+
+    <button class="reset" id="reset" type="button">RESET GAME</button>
+  </div>
+
+  <dialog class="modal" id="win-modal" aria-labelledby="win-title">
+    <h3 id="win-title">Você venceu! 🎉</h3>
+    <p id="win-summary"></p>
+    <p id="win-record"></p>
+    <button class="reset" id="play-again" type="button">Jogar de novo</button>
+  </dialog>
+
+  <p class="sr-only" id="live" aria-live="polite"></p>
+
+  <script src="./src/scripts/engine.js" defer></script>
+</body>
+
+</html>
